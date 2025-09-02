@@ -1,0 +1,150 @@
+/* Custom animations for RemitXpress landing page */
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes transfer-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor;
+  }
+}
+
+/* Tailwind custom animations */
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-transfer-flow {
+  animation: transfer-flow 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Global transfer visualization styles */
+.transfer-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.transfer-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+  animation: transfer-flow 2s ease-in-out infinite;
+}
+
+/* Country flag hover effects */
+.country-flag:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Money flow particles */
+.money-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fbbf24;
+  border-radius: 50%;
+  opacity: 0;
+  animation: money-flow 4s ease-in-out infinite;
+}
+
+@keyframes money-flow {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) translateY(0px);
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(50px) translateY(-20px);
+  }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .world-transfer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .transfer-visualization {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .transfer-line {
+    width: 2px;
+    height: 40px;
+    transform: rotate(90deg);
+  }
+}
+
+/* Gradient background animation */
+.bg-gradient-animated {
+  background: linear-gradient(-45deg, #1e293b, #1e40af, #7c3aed, #be185d);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

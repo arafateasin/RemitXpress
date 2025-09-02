@@ -1,0 +1,16 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployer": "PLACEHOLDER_DEPLOYER_ADDRESS",
+  "timestamp": "PLACEHOLDER_TIMESTAMP",
+  "contracts": {
+    "RemitXpress": {
+      "address": "PLACEHOLDER_CONTRACT_ADDRESS",
+      "txHash": "PLACEHOLDER_TX_HASH"
+    },
+    "PriceConverter": {
+      "address": "PLACEHOLDER_PRICE_CONVERTER_ADDRESS",
+      "txHash": "PLACEHOLDER_TX_HASH"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "remitxpress",
+  "version": "1.0.0",
+  "description": "Secure, fast, and affordable international money transfer platform powered by blockchain technology",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm run install:server && npm run install:client && npm run install:contracts",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:contracts": "cd contracts && npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm start",
+    "dev:blockchain": "cd contracts && npx hardhat node",
+    "build": "npm run build:client && npm run build:contracts",
+    "build:client": "cd client && npm run build",
+    "build:contracts": "cd contracts && npx hardhat compile",
+    "test": "npm run test:server && npm run test:client && npm run test:contracts",
+    "test:server": "cd server && npm test",
+    "test:client": "cd client && npm test",
+    "test:contracts": "cd contracts && npx hardhat test",
+    "deploy:contracts": "cd contracts && npx hardhat run scripts/deploy.js",
+    "deploy:contracts:sepolia": "cd contracts && npx hardhat run scripts/deploy.js --network sepolia",
+    "start": "cd server && npm start",
+    "lint": "npm run lint:server && npm run lint:client",
+    "lint:server": "cd server && eslint .",
+    "lint:client": "cd client && eslint src/",
+    "clean": "npm run clean:server && npm run clean:client && npm run clean:contracts",
+    "clean:server": "cd server && rm -rf node_modules",
+    "clean:client": "cd client && rm -rf node_modules build",
+    "clean:contracts": "cd contracts && rm -rf node_modules cache artifacts"
+  },
+  "keywords": [
+    "remittance",
+    "blockchain",
+    "fintech",
+    "money-transfer",
+    "cryptocurrency",
+    "defi",
+    "international-payments",
+    "web3"
+  ],
+  "author": "RemitXpress Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/remitxpress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/remitxpress/issues"
+  },
+  "homepage": "https://remitxpress.com",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
